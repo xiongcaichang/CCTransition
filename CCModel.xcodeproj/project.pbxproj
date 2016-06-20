@@ -503,6 +503,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F502C33B55BE401200137B40 /* Pods-CCModel.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					arm64,
+					armv7,
+					x86_64,
+					i386,
+					armv7s,
+				);
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CURRENT_PROJECT_VERSION = 1;
