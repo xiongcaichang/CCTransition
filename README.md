@@ -102,7 +102,7 @@ pod  'CCModel'
 ```
 
 
-示例(Example)
+示例(Example)  一般数据库操作全部在子线程完成  一下示例基于 GCD
 ```objc
 
 
@@ -152,5 +152,7 @@ pod  'CCModel'
         NSLog(@"第一条:%@",[[User findFirstByCriteria:@" WHERE age = 2 "] name]);
     });
 }
-***************
+
 ```
+
+
