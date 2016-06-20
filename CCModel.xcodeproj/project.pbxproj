@@ -26,6 +26,7 @@
 		092482121D17F83300622970 /* CCDBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0924820F1D17F83300622970 /* CCDBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092482131D17F83300622970 /* CCDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 092482101D17F83300622970 /* CCDBHelper.m */; };
 		092482141D17F83300622970 /* CCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092482111D17F83300622970 /* CCModel.m */; };
+		09F934AD1D184F1200049555 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F934AC1D184F1200049555 /* libsqlite3.tbd */; };
 		610FA0101B43D36F00CA50C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA00F1B43D36F00CA50C6 /* main.m */; };
 		610FA0131B43D36F00CA50C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA0121B43D36F00CA50C6 /* AppDelegate.m */; };
 		610FA01B1B43D36F00CA50C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610FA01A1B43D36F00CA50C6 /* Images.xcassets */; };
@@ -34,7 +35,6 @@
 		610FA0381B43D42E00CA50C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA0361B43D42E00CA50C6 /* ViewController.m */; };
 		610FA03E1B43D43B00CA50C6 /* Depart.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA03B1B43D43B00CA50C6 /* Depart.m */; };
 		610FA03F1B43D43B00CA50C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA03D1B43D43B00CA50C6 /* User.m */; };
-		610FA0591B43D47F00CA50C6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 610FA0581B43D47F00CA50C6 /* libsqlite3.dylib */; };
 		6157C3A51B5B3A1800592F3F /* QueryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6157C3A41B5B3A1800592F3F /* QueryTableViewController.m */; };
 		89CF52DC99D819A485A006C5 /* libPods-CCModelDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C61505F3DE36AE1E11DF48 /* libPods-CCModelDemo.a */; };
 		A3D729DD0E9B2D331FF0901A /* libPods-CCModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C89D7EC5CE4158A333C853 /* libPods-CCModel.a */; };
@@ -72,6 +72,7 @@
 		092482111D17F83300622970 /* CCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCModel.m; sourceTree = "<group>"; };
 		094B0BD61D179A9100E09BDD /* CCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCModel.h; sourceTree = "<group>"; };
 		094B0BD71D179A9100E09BDD /* CCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCModel.m; sourceTree = "<group>"; };
+		09F934AC1D184F1200049555 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1364ED467F6213C81F0BF6BD /* Pods-CCModelDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCModelDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCModelDemo/Pods-CCModelDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2E046D87E2B8DC22B796FC92 /* Pods-CCModelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCModelDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCModelDemo/Pods-CCModelDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		55C61505F3DE36AE1E11DF48 /* libPods-CCModelDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCModelDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +92,6 @@
 		610FA03D1B43D43B00CA50C6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		610FA0411B43D44300CA50C6 /* CCDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDBHelper.h; sourceTree = "<group>"; };
 		610FA0421B43D44300CA50C6 /* CCDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDBHelper.m; sourceTree = "<group>"; };
-		610FA0581B43D47F00CA50C6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6157C3A31B5B3A1800592F3F /* QueryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryTableViewController.h; sourceTree = "<group>"; };
 		6157C3A41B5B3A1800592F3F /* QueryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryTableViewController.m; sourceTree = "<group>"; };
 		9A378099B707B7625A2BC72E /* Pods-CCModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCModel.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCModel/Pods-CCModel.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F934AD1D184F1200049555 /* libsqlite3.tbd in Frameworks */,
 				092482091D17AEC800622970 /* CCModel.framework in Frameworks */,
-				610FA0591B43D47F00CA50C6 /* libsqlite3.dylib in Frameworks */,
 				89CF52DC99D819A485A006C5 /* libPods-CCModelDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +136,7 @@
 		29104E1F05F3D150D4D4CE77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09F934AC1D184F1200049555 /* libsqlite3.tbd */,
 				B8C89D7EC5CE4158A333C853 /* libPods-CCModel.a */,
 				55C61505F3DE36AE1E11DF48 /* libPods-CCModelDemo.a */,
 			);
@@ -145,7 +146,6 @@
 		610FA0011B43D36F00CA50C6 = {
 			isa = PBXGroup;
 			children = (
-				610FA0581B43D47F00CA50C6 /* libsqlite3.dylib */,
 				610FA00C1B43D36F00CA50C6 /* CCModelDemo */,
 				092482031D17AEC800622970 /* CCModel */,
 				610FA00B1B43D36F00CA50C6 /* Products */,

@@ -8,8 +8,7 @@ s.author       = { "CC" => "15223245@qq.com" }
 s.platform     = :ios, "6.0"
 s.source       = { :git => "https://github.com/xiongcaichang/CCModel.git", :tag => "1.0.0" }
 s.source_files  = "CCModel", "Lib/CCModel/**/*.{h,m}"
-s.library = 'sqlite3'
-s.frameworks = 'UIKit'
 
+s.framework  = 'libsqlite3'
 s.dependency 'FMDB'
 end
