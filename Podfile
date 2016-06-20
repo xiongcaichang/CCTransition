@@ -7,8 +7,11 @@ target 'CCModel' do
     pod 'FMDB'
 
 end
-
 target 'CCModelDemo' do
+    
+    
     pod 'FMDB'
-
+    
 end
+
+
