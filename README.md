@@ -4,11 +4,7 @@
 
 ## 安装(Installation)
 
-* cocopods
 
-```
-pod  'CCModel'
-```
 
 *传统方法: 把 lib 文件夹下面的文件拖入你的项目  manually: Drag all Classes under lib into your project.  
 
