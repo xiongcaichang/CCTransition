@@ -44,7 +44,7 @@
 给控制器设置一种转场类型
 
 
- ```Objective-C
+ ```objc
 
 	 CCNavigationController *navigationController = [[CCNavigationController alloc] initWithRootViewController:viewController];
 
@@ -56,7 +56,7 @@
 
  * 使用方法, 你可以在 `viewDidLoad` 添加以下代码
 
- ```Objective-C
+ ```objc
     CCNavigationController *fancyNavigationController = (CCNavigationController *)self.navigationController;
     CCLayerAnimation *layerAnimation = [[CCLayerAnimation alloc] initWithType:CCLayerAnimationCover];
     fancyNavigationController.animationController = layerAnimation;
@@ -67,7 +67,7 @@
   确保你用来 modal 的控制器是 `CCViewController` 的子类
 
 
- ```Objective-C
+ ```objc
 
 
     CCMainViewController *mainController = [[CCMainViewController alloc] initWithNibName:@"CCFirstViewController" bundle:nil];
@@ -86,7 +86,7 @@
  3. 交互
 
 
- ```Objective-C
+ ```objc
 
     //导航动画交互
     navigationController.interactionEnabled = YES;
