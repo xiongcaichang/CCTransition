@@ -28,6 +28,66 @@
 
 @implementation CCMainViewController
 
+
+
+- (IBAction)navigationButtonTapped:(id)sender {
+    CCPushedViewController *viewController = [[CCPushedViewController alloc] initWithNibName:@"CCPushedViewController" bundle:nil];
+    
+    
+    //初始化导航控制器
+    CCNavigationController *fancyNavigationController = (CCNavigationController *) self.navigationController;
+    
+    
+    //根据选中的索引确定动画类型
+    if (self.selectedNavigationAnimation == 0){
+        fancyNavigationController.animationController = nil;
+    } else {
+        fancyNavigationController.interactionEnabled = YES;
+        NSString *className = [NSString stringWithFormat:@"CC%@Animation", [[self.animations objectAtIndex:self.selectedNavigationAnimation] objectForKey:@"name"]];
+        id transitionInstance = [[NSClassFromString(className) alloc] init];
+        
+        //设置动画
+        fancyNavigationController.animationController = transitionInstance;
+        fancyNavigationController.animationController.type = self.selectedNavigationType;
+    }
+    
+    
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)modalButtonTapped:(id)sender {
+    
+    CCModalViewController *viewController = [[CCModalViewController alloc] initWithNibName:@"CCModalViewController" bundle:nil];
+    
+    CCViewController *fancyViewController = (CCViewController *) self;
+    
+    
+    if (self.selectedModalAnimation == 0){
+        fancyViewController.animationController = nil;
+    } else {
+        fancyViewController.interactionEnabled = YES;
+        NSString *className = [NSString stringWithFormat:@"CC%@Animation", [[self.animations objectAtIndex:self.selectedModalAnimation] objectForKey:@"name"]];
+        id transitionInstance = [[NSClassFromString(className) alloc] init];
+        fancyViewController.animationController = transitionInstance;
+        fancyViewController.animationController.type = self.selectedModalType;
+    }
+    
+    if ([self respondsToSelector:@selector(setTransitioningDelegate:)]){
+        viewController.transitioningDelegate = self.transitioningDelegate;
+    }
+    
+    [self.navigationController presentViewController:viewController animated:YES completion:nil];
+    
+    
+}
+
+
+
+
+
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -223,44 +283,7 @@
 
 #pragma mark - IBAction methods
 
-- (IBAction)navigationButtonTapped:(id)sender {
-    CCPushedViewController *viewController = [[CCPushedViewController alloc] initWithNibName:@"CCPushedViewController" bundle:nil];
-    
-    CCNavigationController *fancyNavigationController = (CCNavigationController *) self.navigationController;
-    
-    if (self.selectedNavigationAnimation == 0){
-        fancyNavigationController.animationController = nil;
-    } else {
-        fancyNavigationController.interactionEnabled = YES;
-        NSString *className = [NSString stringWithFormat:@"CC%@Animation", [[self.animations objectAtIndex:self.selectedNavigationAnimation] objectForKey:@"name"]];
-        id transitionInstance = [[NSClassFromString(className) alloc] init];
-        fancyNavigationController.animationController = transitionInstance;
-        fancyNavigationController.animationController.type = self.selectedNavigationType;
-    }
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-
-- (IBAction)modalButtonTapped:(id)sender {
-    CCModalViewController *viewController = [[CCModalViewController alloc] initWithNibName:@"CCModalViewController" bundle:nil];
-    
-    CCViewController *fancyViewController = (CCViewController *) self;
-    if (self.selectedModalAnimation == 0){
-        fancyViewController.animationController = nil;
-    } else {
-        fancyViewController.interactionEnabled = YES;
-        NSString *className = [NSString stringWithFormat:@"CC%@Animation", [[self.animations objectAtIndex:self.selectedModalAnimation] objectForKey:@"name"]];
-        id transitionInstance = [[NSClassFromString(className) alloc] init];
-        fancyViewController.animationController = transitionInstance;
-        fancyViewController.animationController.type = self.selectedModalType;
-    }
-    
-    if ([self respondsToSelector:@selector(setTransitioningDelegate:)]){
-        viewController.transitioningDelegate = self.transitioningDelegate;  // this is important for the animation to work
-    }
-    
-    [self.navigationController presentViewController:viewController animated:YES completion:nil];
 
 
-}
+
 @end
