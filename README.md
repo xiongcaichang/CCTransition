@@ -6,6 +6,17 @@
 <img src="https://github.com/xiongcaichang/CCTransition/blob/master/demo.gif" alt="Drawing" width="300px" />
 
 
+
+
+
+[![Build Status](http://img.shields.io/travis/rs/CCTransition/master.svg?style=flat)](https://travis-ci.org/rs/CCTransition)
+[![Pod Version](http://img.shields.io/cocoapods/v/CCTransition.svg?style=flat)](http://cocoadocs.org/docsets/CCTransition/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/CCTransition.svg?style=flat)](http://cocoadocs.org/docsets/CCTransition/)
+[![Pod License](http://img.shields.io/cocoapods/l/CCTransition.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![Dependency Status](https://www.versioneye.com/objective-c/CCTransition/3.3/badge.svg?style=flat)](https://www.versioneye.com/objective-c/CCTransition/3.3)
+[![Support](https://img.shields.io/badge/support-iOS%206%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+
+
 ## (开始)Getting started
 
 * 使用 cocopods ( Using CocoaPods)
