@@ -95,9 +95,9 @@
 
  ```objc
 
-    //导航动画交互
+    
     navigationController.interactionEnabled = YES;
 
-    // 模态奇偶奥胡
+    
     mainViewController.interactionEnabled = YES;
  ```
