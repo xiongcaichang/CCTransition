@@ -1,7 +1,7 @@
 //
 //  CCViewController.h
 //  CCTransitionAnimation
-//
+//https://github.com/xiongcaichang/CCTransition
 //  Created by bear on 5/7/16.
 //  Copyright (c) 2016 bear. All rights reserved.
 //
