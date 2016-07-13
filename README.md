@@ -21,7 +21,7 @@
 
 
 
-## (开始)Getting started
+## 开始(Getting started)
 
 * 使用 cocopods ( Using CocoaPods)
   
