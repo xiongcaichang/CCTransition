@@ -1,6 +1,6 @@
 
 
-CCTransition  快速自定义转场动画
+# CCTransition  快速自定义转场动画
 
 
 <img src="https://github.com/xiongcaichang/CCTransition/blob/master/demo.gif" alt="Drawing" width="300px" />
