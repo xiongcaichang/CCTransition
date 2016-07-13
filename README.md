@@ -2,7 +2,8 @@
 
 CCTransition  快速自定义转场动画
 
-![Demo](https://raw.githubusercontent.com/xiongcaichang/CCTransition/master/Demo.gif)
+
+<img src="https://github.com/xiongcaichang/CCTransition/blob/master/demo.gif" alt="Drawing" width="300px" />
 
 
 ## (开始)Getting started
