@@ -56,8 +56,11 @@
  * 使用方法, 你可以在 `viewDidLoad` 添加以下代码
 
  ```objc
+     //初始化控制器
     CCNavigationController *fancyNavigationController = (CCNavigationController *)self.navigationController;
+    //初始化动画效果
     CCLayerAnimation *layerAnimation = [[CCLayerAnimation alloc] initWithType:CCLayerAnimationCover];
+    //设置动画效果
     fancyNavigationController.animationController = layerAnimation;
  ```
 
@@ -68,15 +71,21 @@
 
  ```objc
 
-
-    CCMainViewController *mainController = [[CCMainViewController alloc] initWithNibName:@"CCFirstViewController" bundle:nil];
+   //初始化用来 modal 操作控制器   一般是 self 
+    CCMainViewController *mainController = [[CCMainViewController alloc] initWithNibName:@"CCMainViewController" bundle:nil];
+     //初始化动画效果
     CCSlideAnimation *slideAnimation = [[CCSlideAnimation alloc] init];
     slideAnimation.type = CCSlideAnimationFromTop;
+    //设置动画效果
     mainController.animationController = slideAnimation;
 
 
+   //初始化被 Modal 出的控制器
     CCModalViewController *modalController = [[CCModalViewController alloc] initWithNibName:@"CCModalViewController" bundle:nil];
-    modalController.transitioningDelegate = mainController.transitioningDelegate; // this is important for the transition to work
+    //设置代理
+    modalController.transitioningDelegate = mainController.transitioningDelegate;
+    
+    //进行 Modal 操作
     [modalController.navigationController presentViewController:viewController animated:YES completion:nil];
 
  ```
