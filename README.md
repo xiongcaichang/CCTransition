@@ -5,17 +5,16 @@ CCTransition  快速自定义转场动画
 ![Demo](https://raw.githubusercontent.com/xiongcaichang/CCTransition/master/Demo.gif)
 
 
-v 1.0
- * First public release
-
 ## (开始)Getting started
 
 * 使用 cocopods ( Using CocoaPods)
   
-  
+  ```
 	pod 'CCTransition', '~> 1.0.0'
+	
+```
 
-*常规使用   (Using narmal)
+* 常规使用   (Using narmal)
 
    将   CCTransition  文件夹拖入项目
 
@@ -26,6 +25,7 @@ v 1.0
  创建一个 `CCNavigationController` 实例 
 给控制器设置一种转场类型
 
+
  ```Objective-C
 
 	 CCNavigationController *navigationController = [[CCNavigationController alloc] initWithRootViewController:viewController];
@@ -34,9 +34,9 @@ v 1.0
 	 navigationController.animationController = layerAnimation;
  ```
 
- 如果你是用 storyBord,  请确保你的控制器被 `CCNavigationController`管理
+  如果你是用 storyBord,  请确保你的控制器被 `CCNavigationController`管理
 
- *使用方法, 你可以在 `viewDidLoad` 添加以下代码
+ * 使用方法, 你可以在 `viewDidLoad` 添加以下代码
 
  ```Objective-C
     CCNavigationController *fancyNavigationController = (CCNavigationController *)self.navigationController;
