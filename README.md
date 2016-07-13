@@ -1,157 +1,78 @@
-#CCModel
-
-##最新版本 专做内部使用,未开源
-
-字典转模型 自动缓存
 
 
-## 安装(Installation)
+CCTransition  快速自定义转场动画
+
+![Demo](https://raw.githubusercontent.com/xiongcaichang/CCTransition/master/Demo.gif)
 
 
+v 1.0
+ * First public release
 
-*传统方法: 把 lib 文件夹下面的文件拖入你的项目  manually: Drag all Classes under lib into your project.  
+## (开始)Getting started
 
+* 使用 cocopods ( Using CocoaPods)
+  
+  
+	pod 'CCTransition', '~> 1.0.0'
 
-##使用 (Usage)
+*常规使用   (Using narmal)
 
-在模型类头文件中导入 CCmodel  让你的模型继承自 CCModel  下面将以 User 模型为例
-```objc
-#import "CCModel.h"
+   将   CCTransition  文件夹拖入项目
 
-@interface User : CCModel
+### Basic usage
 
-```
+ 1. 自定义导航控制器转场
 
-*   字典转模型   api
-```objc
+ 创建一个 `CCNavigationController` 实例 
+给控制器设置一种转场类型
 
-/**
- *  字典转模型
- *
- *  @param dict
- *
- *  @return instance
- */
-+ (instancetype)modelWithDict:(NSDictionary *)dict;
+ ```Objective-C
 
+	 CCNavigationController *navigationController = [[CCNavigationController alloc] initWithRootViewController:viewController];
 
-```
-示例(Example)
+	 CCLayerAnimation *layerAnimation = [[CCLayerAnimation alloc] initWithType:CCLayerAnimationCover];
+	 navigationController.animationController = layerAnimation;
+ ```
 
-```objc
-            NSDictionary *dict=@{@"name":@" 赵五",@"sex":@"女",@"age":@(20)};
-            User *user=[User modelWithDict:dict];
-```
+ 如果你是用 storyBord,  请确保你的控制器被 `CCNavigationController`管理
 
+ *使用方法, 你可以在 `viewDidLoad` 添加以下代码
 
+ ```Objective-C
+    CCNavigationController *fancyNavigationController = (CCNavigationController *)self.navigationController;
+    CCLayerAnimation *layerAnimation = [[CCLayerAnimation alloc] initWithType:CCLayerAnimationCover];
+    fancyNavigationController.animationController = layerAnimation;
+ ```
 
+ 2. 自定义 Modal  转场
 
-
-* 数据库操作 操作 api
-
-```objc
-/** 数据库中是否存在表 */
-+ (BOOL)isExistInTable;
-/** 保存或更新
- * 如果不存在主键，保存，
- * 有主键，则更新
- */
-- (BOOL)saveOrUpdate;
-/** 保存单个数据 */
-- (BOOL)save;
-/** 批量保存数据 */
-+ (BOOL)saveObjects:(NSArray *)array;
-/** 更新单个数据 */
-- (BOOL)update;
-/** 批量更新数据*/
-+ (BOOL)updateObjects:(NSArray *)array;
-/** 删除单个数据 */
-- (BOOL)deleteObject;
-/** 批量删除数据 */
-+ (BOOL)deleteObjects:(NSArray *)array;
-/** 通过条件删除数据 */
-+ (BOOL)deleteObjectsByCriteria:(NSString *)criteria;
-/** 清空表 */
-+ (BOOL)clearTable;
-
-/** 查询全部数据 */
-+ (NSArray *)findAll;
-
-/** 通过主键查询 */
-+ (instancetype)findByPK:(int)inPk;
-
-/** 查找某条数据 */
-+ (instancetype)findFirstByCriteria:(NSString *)criteria;
-
-/** 通过条件查找数据 
- * 这样可以进行分页查询 @" WHERE pk > 5 limit 10"
- */
-+ (NSArray *)findByCriteria:(NSString *)criteria;
-/**
- * 创建表
- * 如果已经创建，返回YES
- */
-+ (BOOL)createTable;
-
-#pragma mark - must be override method
-/** 如果子类中有一些property不需要创建数据库字段，那么这个方法必须在子类中重写 
- */
-+ (NSArray *)transients;
-
-```
+  确保你用来 modal 的控制器是 `CCViewController` 的子类
 
 
-示例(Example)  一般数据库操作全部在子线程完成  一下示例基于 GCD
-```objc
+ ```Objective-C
 
 
-/** 开一条子线程:插入多条用户数据 */
-- (IBAction)insertData2:(id)sender {
-
-    dispatch_queue_t q1 = dispatch_queue_create("queue1", NULL);
-    dispatch_async(q1, ^{
-        for (int i = 0; i < 5; ++i) {
-            User *user = [[User alloc] init];
-            user.name = @"赵五";
-            user.sex = @"女";
-            user.age = i+5;
-            [user save];
-        }
-    });
-}
+    CCMainViewController *mainController = [[CCMainViewController alloc] initWithNibName:@"CCFirstViewController" bundle:nil];
+    CCSlideAnimation *slideAnimation = [[CCSlideAnimation alloc] init];
+    slideAnimation.type = CCSlideAnimationFromTop;
+    mainController.animationController = slideAnimation;
 
 
-#pragma mark - 删除数据
-/** 通过条件删除数据 */
-- (IBAction)deleteData:(id)sender {
-//    [User deleteObjectsByCriteria:@" WHERE pk < 10"];
-    [User deleteObjectsWithFormat:@"Where %@ < %d",@"pk",10];
-}
+    CCModalViewController *modalController = [[CCModalViewController alloc] initWithNibName:@"CCModalViewController" bundle:nil];
+    modalController.transitioningDelegate = mainController.transitioningDelegate; // this is important for the transition to work
+    [modalController.navigationController presentViewController:viewController animated:YES completion:nil];
 
-#pragma mark - 修改数据
-/** 创建多个线程更新数据 */
-- (IBAction)updateData1:(id)sender {
-    for (int i = 0; i < 5; i++) {
-        User *user = [[User alloc] init];
-        user.name = [NSString stringWithFormat:@"更新%d",i];
-        user.age = 120+i;
-        user.pk = 5+i;
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [user update];
-        });
-    }
-}
+ ```
+ 
+ 
+ 3. 交互
 
 
+ ```Objective-C
 
-#pragma mark - 查询
-/** 查询单条记录 */
-- (IBAction)queryData1:(id)sender {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"第一条:%@",[[User findFirstByCriteria:@" WHERE age = 2 "] name]);
-    });
-}
+    //导航动画交互
+    navigationController.interactionEnabled = YES;
 
-```
-
-
+    // 模态奇偶奥胡
+    mainViewController.interactionEnabled = YES;
+ ```
