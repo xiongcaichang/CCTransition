@@ -9,10 +9,11 @@ CCTransition  快速自定义转场动画
 
 * 使用 cocopods ( Using CocoaPods)
   
+
   ```
 	pod 'CCTransition', '~> 1.0.0'
-	
-```
+  ```
+
 
 * 常规使用   (Using narmal)
 
