@@ -8,7 +8,21 @@
 [![Pod License](http://img.shields.io/cocoapods/l/CCTransition.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Support](https://img.shields.io/badge/support-iOS%206%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
-
+<form accept-charset="UTF-8" action="/xiongcaichang/CCTransition/star" class="unstarred" data-form-nonce="b02bcf07aaf5b1ea2ad8cc6dcc5c1150b5b84916" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="j+qdJE0hJE7mz3v75NRam2o9eyoMyU6Pa9LkYDR0PcjtaqKMi38WbdpkVUVN0qke+GMpKg5BAGA29miH5rObxw==" /></div>
+      <button
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star xiongcaichang/CCTransition"
+        data-ga-click="Repository, click star button, action:files#disambiguate; text:Star">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/xiongcaichang/CCTransition/stargazers">
+          点击左边的星星给我鼓励一下吧
+        </a>
+        
+        
+        
+</form>
 
 ###截图
 
